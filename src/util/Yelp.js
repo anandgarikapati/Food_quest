@@ -4,7 +4,10 @@ const Yelp = {
         return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, {
             headers: {
                 Authorization: `Bearer ${apiKey}`,
-                'Access-Control-Allow-Origin':'*'
+                'Access-Control-Allow-Origin':'*',
+
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
         })
         .then((response) => {
